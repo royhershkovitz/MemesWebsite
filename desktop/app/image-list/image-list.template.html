@@ -1,5 +1,6 @@
-<ul style="list-style-type: none;">
-    <li ng-repeat="item in $ctrl.list">
-        <img ng-src="{{item.url}}" width="680px" height="510px"/>
+<ul style="list-style-type: none; text-align: center; align-self: center;">
+    <li ng-repeat="item in $ctrl.list" style="padding: 20px">
+        <img ng-src="{{item.url}}" style="max-width: 60vw;"/>
     </li>
 </ul>
+<button ng-click="$ctrl.TestClick()" style="text-align: center; align-self: center;">more!</button>

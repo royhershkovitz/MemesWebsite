@@ -1,0 +1,10 @@
+<header class="col-3 center">
+    <h1>The MEME life</h1>
+    <nav>
+        <ul style="list-style-type: none;">
+            <li ng-repeat="item in $ctrl.list" style="padding: 5px">
+                <a href="{{item.url}}">{{item.name}}</a>
+            </li>
+        </ul>
+    </nav>
+</header>

@@ -1,6 +1,6 @@
 angular.
 module('avivList').
-component('danielList', {
+component('avivList', {
   // Note: The URL is relative to our `index.html` file
   templateUrl: 'app/aviv-list/aviv-list.template.html',
   controller: function AvivListController($http) {
