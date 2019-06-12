@@ -21,6 +21,7 @@ function ImageListController($http) {
             ctrl.list.push(...response.data);
         });
     };
+    
     ctrl.pullMore();
 }
 
