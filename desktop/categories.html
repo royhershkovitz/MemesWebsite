@@ -2,7 +2,7 @@
 <html ng-app="exampleApp">
 <head>
     <meta charset="utf-8">
-    <title>Category-cats?~!</title>
+    <title id=title>Category-cats?~!</title>
     <link rel="stylesheet" type="text/css" href="css/example-style.css">
     <link rel="stylesheet" type="text/css" href="/shared/css/scroll-to-top.css">
     <script src="/shared/js/scroll-to-top.js"></script>
@@ -48,7 +48,6 @@
     function parseImg(response){
         JSON.parse(response).map((item)=>{
                     var image = document.createElement('IMG');
-                    console.log(item.url);
                     image.setAttribute("src", item.url);
                     image.setAttribute("max-width", "70%");
                     image.setAttribute("height", "600px");
@@ -74,5 +73,6 @@
 
     pullCategories();
     document.getElementById("catHeader").innerHTML = name;
+    document.getElementById("title").innerHTML = name;
 </script>
 </html>
