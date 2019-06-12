@@ -1,3 +1,3 @@
 angular.module('exampleApp', [
-  'exampleList', 'imageList', 'sizeList', 'avivList', 'appHeader'
+  'imageList', 'appHeader', 'appCategories'
 ]);

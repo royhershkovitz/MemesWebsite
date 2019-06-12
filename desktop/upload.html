@@ -8,16 +8,23 @@
     <script src="/shared/js/scroll-to-top.js"></script>
     <script src="/shared/js/angular.min.js"></script>
     <script src="app/app.module.js"></script>
-    <script src="app/example-list/example-list.module.js"></script>
-    <script src="app/example-list/example-list.component.js"></script>
     <script src="app/image-list/image-list.module.js"></script>
     <script src="app/image-list/image-list.component.js"></script>
-    <script src="app/size-list/size-list.module.js"></script>
-    <script src="app/size-list/size-list.component.js"></script>
-    <script src="app/aviv-list/aviv-list.module.js"></script>
-    <script src="app/aviv-list/aviv-list.component.js"></script>
     <script src="app/app-header/app-header.module.js"></script>
     <script src="app/app-header/app-header.component.js"></script>
+    <script src="app/app-categories/app-categories.module.js"></script>
+    <script src="app/app-categories/app-categories.component.js"></script>
+    <script>
+        function addToData(){
+            const email = document.getElementById("email").value;
+            const Url = document.getElementById("Url").value;
+
+        }
+        function showImage(){
+            const Url = document.getElementById("Url").value;
+            document.getElementById("validator").src = Url;
+        }
+    </script>
 </head>
 
 <body>    
@@ -27,7 +34,21 @@
         <header class="center">      
             <h1>Upload meme!</h1>
         <header>
-        <div>Hi</div>
+        <form>
+            Uploader email:<br>
+            <input type="text" id="email">
+            <br>
+            Category:<br>
+            <input type="text" id="category">
+            <br>
+            Image link:<br>
+            <input type="text" id="Url">
+            <br><br>
+            <img id="validator" src="">
+            <br>
+            <input type="submit" value="validate image" onClick="showImage()">
+            <input type="submit" value="Submit" onClick="addToData()">
+        </form> 
     </main>
 </body>
 </html>
