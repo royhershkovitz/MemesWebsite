@@ -2,10 +2,8 @@
 <html ng-app="exampleApp">
 <head>
     <meta charset="utf-8">
-    <title>The MEME life</title>
-    <!-- Example for relative path -->
+    <title>Upload</title>
     <link rel="stylesheet" type="text/css" href="css/example-style.css">
-    <!-- Example for absolute path -->
     <link rel="stylesheet" type="text/css" href="/shared/css/scroll-to-top.css">
     <script src="/shared/js/scroll-to-top.js"></script>
     <script src="/shared/js/angular.min.js"></script>
@@ -16,17 +14,41 @@
     <script src="app/app-header/app-header.component.js"></script>
     <script src="app/app-categories/app-categories.module.js"></script>
     <script src="app/app-categories/app-categories.component.js"></script>
+    <script>
+        function addToData(){
+            const email = document.getElementById("email").value;
+            const Url = document.getElementById("Url").value;
 
+        }
+        function showImage(){
+            const Url = document.getElementById("Url").value;
+            document.getElementById("validator").src = Url;
+        }
+    </script>
 </head>
 
-<body >
+<body>    
     <app-header></app-header>
     <button onclick="topFunction()" id="scrollToTopButton" title="Go to top">^</button>
     <main class="col-9 center">
         <header class="center">      
-            <h1>Choose a category</h1>
+            <h1>Upload meme!</h1>
         <header>
+        <form>
+            Uploader email:<br>
+            <input type="text" id="email">
+            <br>
+            Category:<br>
+            <input type="text" id="category">
+            <br>
+            Image link:<br>
+            <input type="text" id="Url">
+            <br><br>
+            <img id="validator" src="">
+            <br>
+            <input type="submit" value="validate image" onClick="showImage()">
+            <input type="submit" value="Submit" onClick="addToData()">
+        </form> 
     </main>
-    <app-categories></app-categories>
 </body>
 </html>

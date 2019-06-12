@@ -2,10 +2,8 @@
 <html ng-app="exampleApp">
 <head>
     <meta charset="utf-8">
-    <title>The MEME life</title>
-    <!-- Example for relative path -->
+    <title>MEMES</title>
     <link rel="stylesheet" type="text/css" href="css/example-style.css">
-    <!-- Example for absolute path -->
     <link rel="stylesheet" type="text/css" href="/shared/css/scroll-to-top.css">
     <script src="/shared/js/scroll-to-top.js"></script>
     <script src="/shared/js/angular.min.js"></script>
@@ -19,14 +17,9 @@
 
 </head>
 
-<body >
+<body>    
     <app-header></app-header>
-    <button onclick="topFunction()" id="scrollToTopButton" title="Go to top">^</button>
-    <main class="col-9 center">
-        <header class="center">      
-            <h1>Choose a category</h1>
-        <header>
-    </main>
-    <app-categories></app-categories>
+    <button onclick="topFunction()" id="scrollToTopButton" title="Go to top">^</button>    
+    <image-list></image-list>
 </body>
 </html>

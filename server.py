@@ -2,7 +2,7 @@ import socketserver
 import sys
 from handler import HCIRequestHandler
 
-port = 8080
+port = 8081
 Handler = HCIRequestHandler
 
 print('server connecting on port: ', port, '\n')

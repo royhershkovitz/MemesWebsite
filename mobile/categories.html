@@ -1,0 +1,76 @@
+<!doctype html>
+<html ng-app="exampleApp">
+<head>
+    <meta charset="utf-8">
+    <title id=title>Category-cats?~!</title>
+    <link rel="stylesheet" type="text/css" href="css/example-style.css">
+    <link rel="stylesheet" type="text/css" href="/shared/css/scroll-to-top.css">
+    <script src="/shared/js/scroll-to-top.js"></script>
+    <script src="/shared/js/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/image-list/image-list.module.js"></script>
+    <script src="app/image-list/image-list.component.js"></script>
+    <script src="app/app-header/app-header.module.js"></script>
+    <script src="app/app-header/app-header.component.js"></script>
+    <script src="app/app-categories/app-categories.module.js"></script>
+    <script src="app/app-categories/app-categories.component.js"></script>
+</head>
+
+<body>    
+    <app-header></app-header>
+    <button onclick="topFunction()" id="scrollToTopButton" title="Go to top">^</button>
+    <main class="col-9 center"> 
+        <header class="center">      
+            <h1 id="catHeader">category</h1>
+        <header>
+        <button id="more" onClick="pullCategories()" style="text-align: center; align-self: center;">more!</button>
+    </main>
+</body>
+<script>
+    var parameters = location.search.substring(1).split("&");
+    var start = 0; var jump = 4;
+    //console.log(parameters[0]);    console.log(parameters[1]);
+    const name = decodeURIComponent(parameters[0]);
+    const collection = decodeURIComponent(parameters[1]);
+    const isVideo = decodeURIComponent(parameters[2]);
+    const moreButt = document.getElementById("more");
+    function parseVideo(response){
+        JSON.parse(response).map((item)=>{
+                    var video = document.createElement('video');
+                    video.setAttribute("src", item.url);
+                    video.setAttribute("width", "100%");
+                    video.setAttribute("alt", name);
+                    video.setAttribute("controls", true);
+                    moreButt.parentNode.insertBefore(video, moreButt);
+                });
+    }
+    function parseImg(response){
+        JSON.parse(response).map((item)=>{
+                    var image = document.createElement('IMG');
+                    image.setAttribute("src", item.url);
+                    image.setAttribute("width", "100%");
+                    image.setAttribute("alt", name);
+                    image.setAttribute("controls", true);
+                    moreButt.parentNode.insertBefore(image, moreButt);
+                });
+    }
+    function pullCategories() {
+        console.log('pulling');
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+                start += jump;
+                isVideo==='1'?parseVideo(xmlHttp.responseText):parseImg(xmlHttp.responseText);
+                var br = document.createElement('br');
+                moreButt.parentNode.insertBefore(br, moreButt);
+            }
+        }
+        xmlHttp.open("GET",`/data?_collection=${collection}&_index=${start}&_length=${jump}`,true);
+        xmlHttp.send(null);
+    };
+
+    pullCategories();
+    document.getElementById("catHeader").innerHTML = name;
+    document.getElementById("title").innerHTML = name;
+</script>
+</html>
