@@ -39,6 +39,7 @@
                     var video = document.createElement('video');
                     video.setAttribute("src", item.url);
                     video.setAttribute("width", "100%");
+                    video.setAttribute("margin", "auto");
                     video.setAttribute("alt", name);
                     video.setAttribute("controls", true);
                     moreButt.parentNode.insertBefore(video, moreButt);
@@ -49,8 +50,8 @@
                     var image = document.createElement('IMG');
                     image.setAttribute("src", item.url);
                     image.setAttribute("width", "100%");
+                    image.setAttribute("margin", "auto");
                     image.setAttribute("alt", name);
-                    image.setAttribute("controls", true);
                     moreButt.parentNode.insertBefore(image, moreButt);
                 });
     }

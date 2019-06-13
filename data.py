@@ -151,7 +151,7 @@ data = {
       {"url": '/shared/images/corgi.jpg'},
       {"url": '/shared/images/cavalier.jpg'},
       {"url": '/shared/images/aussi.jpg'},
-      {"url": '/shared/images/IMG_20190317_010306.jpg'},  {"url": '/shared/images/IMG_20190510_232316.jpg'},
+      {"url": '/shared/images/IMG_20190510_232316.jpg'},
 {"url": '/shared/images/IMG_20190317_133814.jpg'},  {"url": '/shared/images/IMG_20190510_232329.jpg'},
 {"url": '/shared/images/IMG_20190317_134732.jpg'},  {"url": '/shared/images/IMG_20190510_232338.jpg'},
 {"url": '/shared/images/IMG_20180319_151153.jpg'},  {"url": '/shared/images/IMG_20190317_135022.jpg'},  {"url": '/shared/images/IMG_20190510_232403.jpg'},

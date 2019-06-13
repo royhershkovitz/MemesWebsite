@@ -1,3 +1,10 @@
+function extractTitle(input){
+  var out = input.substr(input.lastIndexOf("/")+1);
+  if(out.indexOf("?") >= 0)
+    out = out.substr(0, input.indexOf("?"));
+  return out;
+}
+
 angular.
 module('appHeader').
 component('appHeader', {
@@ -8,5 +15,22 @@ component('appHeader', {
                    {name: 'Memes', url: 'dynamic.html'},
                    {name: 'Upload', url: 'upload.html'},
                    {name: 'About', url: 'about.html'},];
+      var html = extractTitle(window.location.href);
+      console.log(`<${html}>`);
+      this.title = html.substr(0, html.indexOf("."));
+      console.log(`<${this.title}>`);
+      if(html === ''){
+        this.title = 'main';        
+        html = 'index.html';
+      }      
+      if(this.title === 'index')
+        this.title = 'main';
+      if(this.title === 'categories')
+        html = 'index.html';
+      this.list.forEach((element)=>{
+        if(element.url === html){
+          element['style'] = 'background: orange;'
+        }
+      })
     }
 });

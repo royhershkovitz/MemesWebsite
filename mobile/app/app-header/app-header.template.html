@@ -1,13 +1,27 @@
-<header>
-    <link rel="icon" 
-        type="image/png" 
-        href="https://etc.usf.edu/presentations/extras/letters/varsity_letters/01/25/M-300.png"/>
-    <h1>The MEME life</h1>
-    <nav class="col-3 center" style="width:80%; align-self: center;">
-        <ul style="list-style-type: none; text-align: center; width: 40%;">
-            <li ng-repeat="item in $ctrl.list" style="padding: 5px;">
-                <a href="{{item.url}}">{{item.name}}</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<header class="col-3 center">
+        <link rel="icon" 
+            type="image/png" 
+            href="https://etc.usf.edu/presentations/extras/letters/varsity_letters/01/25/M-300.png"/>
+        <div
+            style="
+                z-index: 4000000;
+                height: 250px;
+                font-size: 26px;
+                margin: auto;
+                text-align:center;
+                background-color: white !important;
+                position:fixed;
+                top:0;
+                left: 10px;
+                width:100%;">
+                <h1>The MEME life</h1>
+                <p>{{$ctrl.title}}</p>
+        </div>
+        <nav>
+            <ul style="margin-top:300px; list-style-type: none;">
+                <li ng-repeat="item in $ctrl.list" style="padding: 5px; {{item.style}}">
+                    <a href="{{item.url}}">{{item.name}}</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
