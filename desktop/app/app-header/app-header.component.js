@@ -16,9 +16,7 @@ component('appHeader', {
                    {name: 'Upload', url: 'upload.html'},
                    {name: 'About', url: 'about.html'},];
       var html = extractTitle(window.location.href);
-      console.log(`<${html}>`);
       this.title = html.substr(0, html.indexOf("."));
-      console.log(`<${this.title}>`);
       if(html === ''){
         this.title = 'main';        
         html = 'index.html';
