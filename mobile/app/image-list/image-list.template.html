@@ -1,6 +1,6 @@
-<ul style="list-style-type: none;">
-    <li ng-repeat="item in $ctrl.list" style="padding: 10px;">
-        <img ng-src="{{item.url}}" alt='meme' style="width: 100%; margin: auto;"/>
+<ul style="list-style-type: none; padding: 5px; margin:auto;">
+    <li ng-repeat="item in $ctrl.list" style="width: 100%;">
+        <img ng-src="{{item.url}}" alt='meme' style="width: 100%;"/>
     </li>
 </ul>
 <button ng-click="$ctrl.pullClick()" style="text-align: center; align-self: center;">more!</button>
